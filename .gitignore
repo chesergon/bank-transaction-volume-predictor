@@ -1,0 +1,12 @@
+# Raw data - too large / not needed for the app, keep private
+*.parquet
+Train.csv
+Test.csv
+README.txt
+__MACOSX/
+elbow_plot.png
+
+# Keep the model artifacts (override the parquet ignore for these specific files)
+!model.pkl
+!kmeans.pkl
+!scaler.pkl
