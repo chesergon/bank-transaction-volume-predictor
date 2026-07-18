@@ -71,8 +71,8 @@ Banks need to anticipate customer activity to plan staffing, fraud monitoring, a
 ## Running Locally
 
 ```bash
-git clone https://github.com/chesergon/Zindi-Bank-Transaction-Competition.git
-cd Zindi-Bank-Transaction-Competition/transactions_dataset
+git clone https://github.com/chesergon/bank-transaction-volume-predictor.git
+cd bank-transaction-volume-predictor/transactions_dataset
 pip install -r requirements.txt
 streamlit run app.py
 ```
