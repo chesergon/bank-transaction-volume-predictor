@@ -5,23 +5,26 @@ import pickle
 import json
 import shap
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 st.set_page_config(page_title="Transaction Volume Predictor", layout="wide")
+
+BASE_DIR = Path(__file__).resolve().parent
 
 # ---------- Load saved artifacts ----------
 @st.cache_resource
 def load_artifacts():
-    with open('model.pkl', 'rb') as f:
+    with open(BASE_DIR / 'model.pkl', 'rb') as f:
         model = pickle.load(f)
-    with open('kmeans.pkl', 'rb') as f:
+    with open(BASE_DIR / 'kmeans.pkl', 'rb') as f:
         kmeans = pickle.load(f)
-    with open('scaler.pkl', 'rb') as f:
+    with open(BASE_DIR / 'scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
-    with open('feature_columns.json', 'r') as f:
+    with open(BASE_DIR / 'feature_columns.json', 'r') as f:
         feature_columns = json.load(f)
-    with open('feature_medians.json', 'r') as f:
+    with open(BASE_DIR / 'feature_medians.json', 'r') as f:
         feature_medians = json.load(f)
-    with open('cluster_summary.json', 'r') as f:
+    with open(BASE_DIR / 'cluster_summary.json', 'r') as f:
         cluster_summary = json.load(f)
     return model, kmeans, scaler, feature_columns, feature_medians, cluster_summary
 
